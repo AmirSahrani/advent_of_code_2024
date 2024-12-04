@@ -1,0 +1,22 @@
+opam-version: "2.0"
+added: [
+  "bin/ocaml-crunch" {"F:S4213824T1733079206.69"}
+  "doc/crunch" {"D"}
+  "doc/crunch/CHANGES.md" {"F:S3062T1733079206.69"}
+  "doc/crunch/LICENSE.md" {"F:S803T1733079206.69"}
+  "doc/crunch/README.md" {"F:S2160T1733079206.69"}
+  "lib/crunch" {"D"}
+  "lib/crunch/META" {"F:S223T1733079206.69"}
+  "lib/crunch/crunch.a" {"F:S47108T1733079206.69"}
+  "lib/crunch/crunch.cma" {"F:S41634T1733079206.69"}
+  "lib/crunch/crunch.cmi" {"F:S1442T1733079206.69"}
+  "lib/crunch/crunch.cmt" {"F:S113912T1733079206.69"}
+  "lib/crunch/crunch.cmti" {"F:S10586T1733079206.69"}
+  "lib/crunch/crunch.cmx" {"F:S6978T1733079206.69"}
+  "lib/crunch/crunch.cmxa" {"F:S1133T1733079206.69"}
+  "lib/crunch/crunch.cmxs" {"F:S57120T1733079206.69"}
+  "lib/crunch/crunch.ml" {"F:S7000T1733079206.69"}
+  "lib/crunch/crunch.mli" {"F:S1938T1733079206.69"}
+  "lib/crunch/dune-package" {"F:S795T1733079206.69"}
+  "lib/crunch/opam" {"F:S1265T1733079206.69"}
+]

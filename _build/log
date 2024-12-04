@@ -1,0 +1,6 @@
+# dune init executable day2
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /home/amirsahrani/.cache/dune/db
+# Workspace root: /home/amirsahrani/Documents/python/ocaml/advent_of_code_2024
+# Auto-detected concurrency: 32

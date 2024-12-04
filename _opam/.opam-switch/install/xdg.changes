@@ -1,0 +1,25 @@
+opam-version: "2.0"
+added: [
+  "doc/xdg" {"D"}
+  "doc/xdg/CHANGES.md" {"F:S175905T1732985323.42"}
+  "doc/xdg/LICENSE.md" {"F:S1111T1732985323.42"}
+  "doc/xdg/README.md" {"F:S6004T1732985323.42"}
+  "doc/xdg/odoc-pages" {"D"}
+  "doc/xdg/odoc-pages/index.mld" {"F:S777T1732985323.42"}
+  "lib/stublibs/dllxdg_stubs.so" {"F:S17760T1732985323.42"}
+  "lib/xdg" {"D"}
+  "lib/xdg/META" {"F:S217T1732985323.41"}
+  "lib/xdg/dune-package" {"F:S944T1732985323.41"}
+  "lib/xdg/libxdg_stubs.a" {"F:S5896T1732985323.41"}
+  "lib/xdg/opam" {"F:S836T1732985323.41"}
+  "lib/xdg/xdg.a" {"F:S11872T1732985323.41"}
+  "lib/xdg/xdg.cma" {"F:S12372T1732985323.41"}
+  "lib/xdg/xdg.cmi" {"F:S1040T1732985323.41"}
+  "lib/xdg/xdg.cmt" {"F:S24547T1732985323.41"}
+  "lib/xdg/xdg.cmti" {"F:S7973T1732985323.41"}
+  "lib/xdg/xdg.cmx" {"F:S1189T1732985323.41"}
+  "lib/xdg/xdg.cmxa" {"F:S328T1732985323.41"}
+  "lib/xdg/xdg.cmxs" {"F:S27232T1732985323.42"}
+  "lib/xdg/xdg.ml" {"F:S1980T1732985323.41"}
+  "lib/xdg/xdg.mli" {"F:S994T1732985323.41"}
+]
