@@ -40,81 +40,117 @@ let check_down lst_str line pos =
   else ""
 
 let check_diag_up_right lst_str line pos =
-  if pos < String.length (List.nth lst_str line) - 3 && line - 3 >= 0 then (
+  if pos < String.length (List.nth lst_str line) - 3 && line - 3 >= 0 then
     let out =
       Char.escaped (List.nth lst_str line).[pos]
       ^ Char.escaped (List.nth lst_str (line - 1)).[pos + 1]
       ^ Char.escaped (List.nth lst_str (line - 2)).[pos + 2]
       ^ Char.escaped (List.nth lst_str (line - 3)).[pos + 3]
     in
-    if out = "XMAS" then print_string "U_R\n";
-    out)
+    out
   else ""
 
 let check_diag_up_left lst_str line pos =
-  if pos >= 3 && line >= 3 then (
+  if pos >= 3 && line >= 3 then
     let out =
       Char.escaped (List.nth lst_str line).[pos]
       ^ Char.escaped (List.nth lst_str (line - 1)).[pos - 1]
       ^ Char.escaped (List.nth lst_str (line - 2)).[pos - 2]
       ^ Char.escaped (List.nth lst_str (line - 3)).[pos - 3]
     in
-    if out = "XMAS" then print_string "U_L\n";
-    out)
+    out
   else ""
 
 let check_diag_down_right lst_str line pos =
   if
     pos < String.length (List.nth lst_str line) - 3
     && line < List.length lst_str - 3
-  then (
+  then
     let out =
       Char.escaped (List.nth lst_str line).[pos]
       ^ Char.escaped (List.nth lst_str (line + 1)).[pos + 1]
       ^ Char.escaped (List.nth lst_str (line + 2)).[pos + 2]
       ^ Char.escaped (List.nth lst_str (line + 3)).[pos + 3]
     in
-    if out = "XMAS" then print_string "D_R\n";
-    out)
+    out
   else ""
 
 let check_diag_down_left lst_str line pos =
-  if pos >= 3 && line < List.length lst_str - 3 then (
+  if pos >= 3 && line < List.length lst_str - 3 then
     let out =
       Char.escaped (List.nth lst_str line).[pos]
       ^ Char.escaped (List.nth lst_str (line + 1)).[pos - 1]
       ^ Char.escaped (List.nth lst_str (line + 2)).[pos - 2]
       ^ Char.escaped (List.nth lst_str (line + 3)).[pos - 3]
     in
-    if out = "XMAS" then print_string "D_L\n";
-    out)
+    out
   else ""
 
-let find_num_xmas lst_str =
+let reverse_sam str =
+  try Char.escaped str.[2] ^ Char.escaped str.[1] ^ Char.escaped str.[0]
+  with Failure _ ->
+    let _ = print_string "Failed reversing" in
+    ""
+
+let check_diag_right_left lst_str line pos =
+  if
+    pos >= 1
+    && pos < String.length (List.nth lst_str line) - 1
+    && line >= 1
+    && line < List.length lst_str - 1
+  then
+    let out =
+      Char.escaped (List.nth lst_str (line - 1)).[pos + 1]
+      ^ Char.escaped (List.nth lst_str line).[pos]
+      ^ Char.escaped (List.nth lst_str (line + 1)).[pos - 1]
+    in
+    if out = "SAM" then reverse_sam out else out
+  else ""
+
+let check_diag_left_right lst_str line pos =
+  if
+    pos >= 1
+    && pos < String.length (List.nth lst_str line) - 1
+    && line >= 1
+    && line < List.length lst_str - 1
+  then
+    let out =
+      Char.escaped (List.nth lst_str (line - 1)).[pos - 1]
+      ^ Char.escaped (List.nth lst_str line).[pos]
+      ^ Char.escaped (List.nth lst_str (line + 1)).[pos + 1]
+    in
+    if out = "SAM" then reverse_sam out else out
+  else ""
+
+let x_mas_checker lst_str line_number line_pos =
+  if (List.nth lst_str line_number).[line_pos] = 'A' then
+    if
+      check_diag_left_right lst_str line_number line_pos = "MAS"
+      && check_diag_right_left lst_str line_number line_pos = "MAS"
+    then 1
+    else 0
+  else 0
+
+let xmas_checker lst_str line_number line_pos =
+  if (List.nth lst_str line_number).[line_pos] = 'X' then
+    (if check_left lst_str line_number line_pos = "XMAS" then 1 else 0)
+    + (if check_right lst_str line_number line_pos = "XMAS" then 1 else 0)
+    + (if check_up lst_str line_number line_pos = "XMAS" then 1 else 0)
+    + (if check_down lst_str line_number line_pos = "XMAS" then 1 else 0)
+    + (if check_diag_up_left lst_str line_number line_pos = "XMAS" then 1 else 0)
+    + (if check_diag_down_right lst_str line_number line_pos = "XMAS" then 1
+       else 0)
+    + (if check_diag_down_left lst_str line_number line_pos = "XMAS" then 1
+       else 0)
+    + if check_diag_up_right lst_str line_number line_pos = "XMAS" then 1 else 0
+  else 0
+
+let find_num_xmas condition_counter lst_str =
   let max_length = String.length (List.nth lst_str 0) in
   let max_lines = List.length lst_str in
   let rec count_occurances line_number line_pos count =
     try
-      let new_count =
-        if (List.nth lst_str line_number).[line_pos] = 'X' then
-          count
-          + (if check_left lst_str line_number line_pos = "XMAS" then 1 else 0)
-          + (if check_right lst_str line_number line_pos = "XMAS" then 1 else 0)
-          + (if check_up lst_str line_number line_pos = "XMAS" then 1 else 0)
-          + (if check_down lst_str line_number line_pos = "XMAS" then 1 else 0)
-          + (if check_diag_up_left lst_str line_number line_pos = "XMAS" then 1
-             else 0)
-          + (if check_diag_down_right lst_str line_number line_pos = "XMAS" then
-               1
-             else 0)
-          + (if check_diag_down_left lst_str line_number line_pos = "XMAS" then
-               1
-             else 0)
-          +
-          if check_diag_up_right lst_str line_number line_pos = "XMAS" then 1
-          else 0
-        else count
-      in
+      let new_count = count + condition_counter lst_str line_number line_pos in
       if line_pos + 1 >= max_length then
         if line_number + 1 >= max_lines then new_count
         else count_occurances (line_number + 1) 0 new_count
@@ -125,5 +161,6 @@ let find_num_xmas lst_str =
 
 let () =
   let data = read_lines "data/input" in
-  let count = find_num_xmas data in
-  print_int count
+  let count1 = find_num_xmas xmas_checker data in
+  let count2 = find_num_xmas x_mas_checker data in
+  Printf.printf "part 1: %d\npart 2: %d\n" count1 count2
