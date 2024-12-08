@@ -47,14 +47,12 @@ let rec project_n (fromx, fromy) (throughx, throughy) max_x max_y mult =
   else []
 
 let rec all_pairs lst =
-  List.filter
-    (fun (x, y) -> x <> y)
-    (match lst with
-    | [] -> []
-    | x :: tl ->
-        List.map (fun y -> (x, y)) lst
-        @ List.map (fun y -> (y, x)) lst
-        @ all_pairs tl)
+  match lst with
+  | [] -> []
+  | x :: tl ->
+      List.map (fun y -> (x, y)) tl
+      @ List.map (fun y -> (y, x)) tl
+      @ all_pairs tl
 
 let check_nodes tbl max_x max_y projector =
   List.flatten
@@ -62,9 +60,11 @@ let check_nodes tbl max_x max_y projector =
        (fun frequency _ acc ->
          let points = Hashtbl.find_all tbl frequency in
          let pairs = all_pairs points in
+         let start_mult = 0 in
          let results =
            List.map
-             (fun ((_, pos1), (_, pos2)) -> projector pos1 pos2 max_x max_y 0)
+             (fun ((_, pos1), (_, pos2)) ->
+               projector pos1 pos2 max_x max_y start_mult)
              pairs
          in
          results @ acc)
@@ -87,12 +87,7 @@ let part_1 data vis =
   let out = check_nodes hash max_x max_y project_once in
   let _ = List.iter (fun (i, j) -> Array.set (Array.get array i) j '#') out in
   if vis then visualize_mat array;
-  let sum =
-    Array.fold_right
-      (fun arr acc ->
-        Array.fold_right (fun y acc -> if y = '#' then acc + 1 else acc) arr acc)
-      array 0
-  in
+  let sum = List.length out in
   printf "Part 1: %d\n" sum
 
 let part_2 data vis =
@@ -105,12 +100,7 @@ let part_2 data vis =
   let out = check_nodes hash max_x max_y project_n in
   let _ = List.iter (fun (i, j) -> Array.set (Array.get array i) j '#') out in
   if vis then visualize_mat array;
-  let sum =
-    Array.fold_right
-      (fun arr acc ->
-        Array.fold_right (fun y acc -> if y = '#' then acc + 1 else acc) arr acc)
-      array 0
-  in
+  let sum = List.length out in
   printf "Part 1: %d\n" sum
 
 let () =
