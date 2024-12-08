@@ -27,27 +27,36 @@ let get_frequencies_and_pos matrix =
   done;
   map
 
-let rec project (fromx, fromy) (throughx, throughy) max_x max_y mult =
-  if fromx = throughx && fromy = throughy then []
-  else
-    let x_dist = throughx - fromx in
-    let y_dist = throughy - fromy in
-    let next_x = throughx + (x_dist * mult) in
-    let next_y = throughy + (y_dist * mult) in
-    if next_x >= 0 && next_y >= 0 && next_x < max_x && next_y < max_y then
-      (next_x, next_y)
-      :: project (fromx, fromy) (throughx, throughy) max_x max_y (mult + 1)
-    else []
+let project_once (fromx, fromy) (throughx, throughy) max_x max_y _ =
+  let x_dist = throughx - fromx in
+  let y_dist = throughy - fromy in
+  let next_x = throughx + x_dist in
+  let next_y = throughy + y_dist in
+  if next_x >= 0 && next_y >= 0 && next_x < max_x && next_y < max_y then
+    [ (next_x, next_y) ]
+  else []
+
+let rec project_n (fromx, fromy) (throughx, throughy) max_x max_y mult =
+  let x_dist = throughx - fromx in
+  let y_dist = throughy - fromy in
+  let next_x = throughx + (x_dist * mult) in
+  let next_y = throughy + (y_dist * mult) in
+  if next_x >= 0 && next_y >= 0 && next_x < max_x && next_y < max_y then
+    (next_x, next_y)
+    :: project_n (fromx, fromy) (throughx, throughy) max_x max_y (mult + 1)
+  else []
 
 let rec all_pairs lst =
-  match lst with
-  | [] -> []
-  | x :: tl ->
-      List.map (fun y -> (x, y)) lst
-      @ List.map (fun y -> (y, x)) lst
-      @ all_pairs tl
+  List.filter
+    (fun (x, y) -> x <> y)
+    (match lst with
+    | [] -> []
+    | x :: tl ->
+        List.map (fun y -> (x, y)) lst
+        @ List.map (fun y -> (y, x)) lst
+        @ all_pairs tl)
 
-let check_nodes tbl max_x max_y =
+let check_nodes tbl max_x max_y projector =
   List.flatten
     (Hashtbl.fold
        (fun frequency _ acc ->
@@ -55,34 +64,57 @@ let check_nodes tbl max_x max_y =
          let pairs = all_pairs points in
          let results =
            List.map
-             (fun ((_, pos1), (_, pos2)) -> project pos1 pos2 max_x max_y 0)
+             (fun ((_, pos1), (_, pos2)) -> projector pos1 pos2 max_x max_y 0)
              pairs
          in
          results @ acc)
        tbl [])
 
-let () =
-  let ic = open_in "data/input" in
-  let data = readfile ic in
+let visualize_mat mat =
+  Array.iter
+    (fun x ->
+      print_list (Array.to_list x);
+      print_endline "")
+    mat
+
+let part_1 data vis =
   let array =
     to_matrix data (List.length data) (String.length (List.nth data 0))
   in
   let max_x = Array.length array in
   let max_y = Array.length array.(0) in
   let hash = get_frequencies_and_pos array in
-  let out = check_nodes hash max_x max_y in
+  let out = check_nodes hash max_x max_y project_once in
   let _ = List.iter (fun (i, j) -> Array.set (Array.get array i) j '#') out in
-  let _ =
-    Array.iter
-      (fun x ->
-        print_list (Array.to_list x);
-        print_endline "")
-      array
-  in
-  let sum_part_1 =
+  if vis then visualize_mat array;
+  let sum =
     Array.fold_right
       (fun arr acc ->
         Array.fold_right (fun y acc -> if y = '#' then acc + 1 else acc) arr acc)
       array 0
   in
-  printf "Part 1: %d\n" sum_part_1
+  printf "Part 1: %d\n" sum
+
+let part_2 data vis =
+  let array =
+    to_matrix data (List.length data) (String.length (List.nth data 0))
+  in
+  let max_x = Array.length array in
+  let max_y = Array.length array.(0) in
+  let hash = get_frequencies_and_pos array in
+  let out = check_nodes hash max_x max_y project_n in
+  let _ = List.iter (fun (i, j) -> Array.set (Array.get array i) j '#') out in
+  if vis then visualize_mat array;
+  let sum =
+    Array.fold_right
+      (fun arr acc ->
+        Array.fold_right (fun y acc -> if y = '#' then acc + 1 else acc) arr acc)
+      array 0
+  in
+  printf "Part 1: %d\n" sum
+
+let () =
+  let ic = open_in "data/input" in
+  let data = readfile ic in
+  part_1 data false;
+  part_2 data false
