@@ -1,5 +1,7 @@
 open In_channel
 
+[@@@ocaml.warning "-26"]
+
 let readdata ic =
   let out = input_line ic in
   match out with None -> "" | Some x -> x
@@ -48,6 +50,46 @@ let fill_gaps lst =
       | Some x -> (acc, x))
     0 lst
 
+let find_n_consecutive_none arr n max =
+  let is_n_none i =
+    if i + n > max then false
+    else List.init n (fun j -> arr.(i + j)) |> List.for_all (( = ) None)
+  in
+  try Some (Array.to_list arr |> List.mapi (fun i _ -> i) |> List.find is_n_none)
+  with Not_found -> None
+
+let fill_gaps_block (lst : int option list) blocks =
+  let arr = Array.of_list lst in
+  let arr_blocks = Array.of_list blocks in
+  let max_id =
+    List.fold_right
+      (fun x acc ->
+        match x with None -> acc | Some n when n > acc -> n | _ -> acc)
+      lst 0
+  in
+  let rec aux id =
+    if id < 0 then ()
+    else
+      let required, _ = arr_blocks.(id) in
+      let required = required in
+      let minimum =
+        Array.find_index
+          (fun x -> match x with None -> false | Some y -> y = id)
+          arr
+      in
+      let minimum = match minimum with None -> 0 | Some x -> x in
+      match find_n_consecutive_none arr required minimum with
+      | None -> aux (id - 1)
+      | Some n ->
+          Array.iteri (fun i x -> if x = Some id then arr.(i) <- None) arr;
+          List.iter
+            (fun i -> arr.(n + i) <- Some id)
+            (List.init required (fun j -> j));
+          aux (id - 1)
+  in
+  aux max_id;
+  arr
+
 let part_1 data =
   let lst_data = str_to_list data in
   let disk = gen_disk lst_data true 0 in
@@ -57,7 +99,24 @@ let part_1 data =
   let total = List.fold_right (fun x acc -> acc + x) check_sum 0 in
   Printf.printf "Part 1: %d\n" total
 
+let part_2 data =
+  let lst_data = str_to_list data in
+  let disk = gen_disk lst_data true 0 in
+  let blocks =
+    List.mapi
+      (fun id size -> if id mod 2 = 0 then (size, id / 2) else (-1, -1))
+      lst_data
+  in
+  let blocks = List.filter (fun (x, _) -> x <> -1) blocks in
+  let filled = fill_gaps_block disk blocks in
+  let check_sum =
+    Array.mapi (fun i x -> match x with Some x -> x * i | None -> 0) filled
+  in
+  let total = Array.fold_right (fun x acc -> acc + x) check_sum 0 in
+  Printf.printf "Part 2: %d\n" total
+
 let () =
   let ic = open_in "data/input" in
   let data = readdata ic in
-  part_1 data
+  part_1 data;
+  part_2 data
