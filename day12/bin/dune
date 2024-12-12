@@ -1,4 +1,5 @@
 (executable
  (public_name day12)
  (name main)
- (libraries day12))
+ (libraries day12)
+ (modes byte exe))
