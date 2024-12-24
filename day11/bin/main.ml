@@ -79,9 +79,15 @@ let h_from_list lst =
   h
 
 let () =
-    let  _ = [ 125;17 ] in (*test input*)
+  let _ = [ 125; 17 ] in
+  (*test input*)
   let lst = [ 554735; 45401; 8434; 0; 188; 7487525; 77; 7 ] in
   let h = h_from_list lst in
-  let blinked = time apply_memo_blink h 1000 in
-  printf "\nPart 1: %d\n"
+  let blinked = time apply_memo_blink h 25 in
+  let blinked2 = time apply_memo_blink h 75 in
+  printf "\nPart 1: %d, Dict size: %d\n"
     (Hashtbl.fold (fun _ count acc -> acc + count) blinked 0)
+    (Hashtbl.length blinked);
+  printf "\nPart 2: %d, Dict size: %d\n"
+    (Hashtbl.fold (fun _ count acc -> acc + count) blinked2 0)
+    (Hashtbl.length blinked2)

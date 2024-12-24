@@ -23,7 +23,8 @@ let get_neighbors mat i j =
     (fun (x, y) ->
       let new_i = i + x in
       let new_j = j + y in
-      try (mat.(new_i).(new_j), new_i, new_j) with _ -> ('0', new_i, new_j))
+      let c = try mat.(new_i).(new_j) with _ -> '~' in
+      (c, new_i, new_j))
     directions
 
 let rec explore mat i j target already_included =
@@ -41,6 +42,11 @@ let rec explore mat i j target already_included =
            else [ (0, 1) ])
          neighbors))
 
+let print_tuple tup =
+  match tup with
+  | i, j, di, dj, char ->
+      printf "%d, %d, %d, %d, %c," i j di dj (char_of_int char)
+
 let rec explore2 mat i j target already_included fences =
   if TupleSet.mem (i, j) !already_included then [ (0, 0) ]
   else (
@@ -49,27 +55,29 @@ let rec explore2 mat i j target already_included fences =
     List.flatten
       (List.map
          (fun (x, new_i, new_j) ->
-           if TupleSet.mem (new_i, new_j) !already_included then [ (0, 0) ]
+           if TupleSet.mem (new_i, new_j) !already_included && x = target then
+             [ (0, 0) ]
            else if x = target then
              (1, 0) :: explore2 mat new_i new_j target already_included fences
            else
-             let di, dj = (new_i - i, new_j - j) in
+             let di, dj = (i - new_i, j - new_j) in
              let exist_fence_block =
                List.exists
                  (fun (i', j', di', dj', t) ->
-                   (i' - dj', j' - di', di', dj', t)
-                   = (new_i, new_j, di, dj, int_of_char target)
-                   || (i' + dj', j' + di', di', dj', t)
-                      = (new_i, new_j, di, dj, int_of_char target))
+                   (i' + dj', j' + di', di', dj', t)
+                   = (new_i, new_j, di, dj, target)
+                   || (i' - dj', j' - di', di', dj', t)
+                      = (new_i, new_j, di, dj, target))
                  !fences
              in
              List.iter
                (fun x ->
                  if not (List.mem x !fences) then fences := x :: !fences)
                [
-                 (new_i, new_j, di, dj, int_of_char target);
-                 (new_i + dj, new_j + di, di, dj, int_of_char target);
-                 (new_i - dj, new_j - di, di, dj, int_of_char target);
+                 (new_i, new_j, di, dj, target);
+                 (* removing on of these fixes the c issue, but only in one direction? check up and down as well *)
+                 (* (new_i + dj, new_j + di, di, dj, target); *)
+                 (* (new_i - dj, new_j - di, di, dj, target); *)
                ];
              if exist_fence_block then [ (0, 0) ] else [ (0, 1) ])
          neighbors))
@@ -101,7 +109,6 @@ let part_1 matrix =
 let part_2 matrix =
   let counts = Hashtbl.create 10 in
   let already_included = ref TupleSet.empty in
-  let fences = ref [] in
   Array.iteri
     (fun i row ->
       Array.iteri
@@ -109,6 +116,7 @@ let part_2 matrix =
           if TupleSet.mem (i, j) !already_included then ()
           else
             let out =
+              let fences = ref [] in
               (1, 0) :: explore2 matrix i j entry already_included fences
             in
             let plots, border =
@@ -116,7 +124,7 @@ let part_2 matrix =
                 (fun (p, b) (acc_p, acc_b) -> (acc_p + p, acc_b + b))
                 out (0, 0)
             in
-            printf "%c; %d %d\n" entry plots border;
+            printf "%c; %d %d \n" entry plots border;
             if Hashtbl.mem counts entry then (
               let c = Hashtbl.find counts entry in
               Hashtbl.remove counts entry;
