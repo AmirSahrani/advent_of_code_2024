@@ -1,4 +1,4 @@
 (executable
  (public_name day14)
  (name main)
- (libraries day14))
+ (libraries day14 re unix))
