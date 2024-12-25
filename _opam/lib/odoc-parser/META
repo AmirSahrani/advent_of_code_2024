@@ -1,4 +1,4 @@
-version = "2.4.3"
+version = "2.4.4"
 description = ""
 requires = "astring camlp-streams result"
 archive(byte) = "odoc_parser.cma"

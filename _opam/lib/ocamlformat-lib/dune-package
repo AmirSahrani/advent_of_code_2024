@@ -1,6 +1,6 @@
 (lang dune 3.17)
 (name ocamlformat-lib)
-(version 0.26.2)
+(version 0.27.0)
 (sections (lib .) (libexec .) (doc ../../doc/ocamlformat-lib))
 (files
  (lib
@@ -73,52 +73,46 @@
    Version.mli
    box_debug.ml
    dune-package
-   format_/format.ml
-   format_/format.mli
-   format_/format_.a
-   format_/format_.cma
-   format_/format_.cmi
-   format_/format_.cmt
-   format_/format_.cmti
-   format_/format_.cmx
-   format_/format_.cmxa
    format_/format_.ml
    format_/format_.mli
-   format_/format___.cmi
-   format_/format___.cmt
-   format_/format___.cmx
-   format_/format___.ml
-   format_/format___Format.cmi
-   format_/format___Format.cmt
-   format_/format___Format.cmti
-   format_/format___Format.cmx
+   format_/ocamlformat_format.a
+   format_/ocamlformat_format.cma
+   format_/ocamlformat_format.cmi
+   format_/ocamlformat_format.cmt
+   format_/ocamlformat_format.cmx
+   format_/ocamlformat_format.cmxa
+   format_/ocamlformat_format.ml
+   format_/ocamlformat_format__Format_.cmi
+   format_/ocamlformat_format__Format_.cmt
+   format_/ocamlformat_format__Format_.cmti
+   format_/ocamlformat_format__Format_.cmx
    ocaml_common/location.ml
    ocaml_common/location.mli
    ocaml_common/longident.ml
    ocaml_common/longident.mli
-   ocaml_common/ocaml_common.a
-   ocaml_common/ocaml_common.cma
-   ocaml_common/ocaml_common.cmi
-   ocaml_common/ocaml_common.cmt
-   ocaml_common/ocaml_common.cmx
-   ocaml_common/ocaml_common.cmxa
-   ocaml_common/ocaml_common.ml
-   ocaml_common/ocaml_common__Location.cmi
-   ocaml_common/ocaml_common__Location.cmt
-   ocaml_common/ocaml_common__Location.cmti
-   ocaml_common/ocaml_common__Location.cmx
-   ocaml_common/ocaml_common__Longident.cmi
-   ocaml_common/ocaml_common__Longident.cmt
-   ocaml_common/ocaml_common__Longident.cmti
-   ocaml_common/ocaml_common__Longident.cmx
-   ocaml_common/ocaml_common__Syntaxerr.cmi
-   ocaml_common/ocaml_common__Syntaxerr.cmt
-   ocaml_common/ocaml_common__Syntaxerr.cmti
-   ocaml_common/ocaml_common__Syntaxerr.cmx
-   ocaml_common/ocaml_common__Warnings.cmi
-   ocaml_common/ocaml_common__Warnings.cmt
-   ocaml_common/ocaml_common__Warnings.cmti
-   ocaml_common/ocaml_common__Warnings.cmx
+   ocaml_common/ocamlformat_ocaml_common.a
+   ocaml_common/ocamlformat_ocaml_common.cma
+   ocaml_common/ocamlformat_ocaml_common.cmi
+   ocaml_common/ocamlformat_ocaml_common.cmt
+   ocaml_common/ocamlformat_ocaml_common.cmx
+   ocaml_common/ocamlformat_ocaml_common.cmxa
+   ocaml_common/ocamlformat_ocaml_common.ml
+   ocaml_common/ocamlformat_ocaml_common__Location.cmi
+   ocaml_common/ocamlformat_ocaml_common__Location.cmt
+   ocaml_common/ocamlformat_ocaml_common__Location.cmti
+   ocaml_common/ocamlformat_ocaml_common__Location.cmx
+   ocaml_common/ocamlformat_ocaml_common__Longident.cmi
+   ocaml_common/ocamlformat_ocaml_common__Longident.cmt
+   ocaml_common/ocamlformat_ocaml_common__Longident.cmti
+   ocaml_common/ocamlformat_ocaml_common__Longident.cmx
+   ocaml_common/ocamlformat_ocaml_common__Syntaxerr.cmi
+   ocaml_common/ocamlformat_ocaml_common__Syntaxerr.cmt
+   ocaml_common/ocamlformat_ocaml_common__Syntaxerr.cmti
+   ocaml_common/ocamlformat_ocaml_common__Syntaxerr.cmx
+   ocaml_common/ocamlformat_ocaml_common__Warnings.cmi
+   ocaml_common/ocamlformat_ocaml_common__Warnings.cmt
+   ocaml_common/ocamlformat_ocaml_common__Warnings.cmti
+   ocaml_common/ocamlformat_ocaml_common__Warnings.cmx
    ocaml_common/syntaxerr.ml
    ocaml_common/syntaxerr.mli
    ocaml_common/warnings.ml
@@ -307,43 +301,43 @@
    odoc_parser/lexer.mli
    odoc_parser/loc.ml
    odoc_parser/loc.mli
-   odoc_parser/odoc_parser.a
-   odoc_parser/odoc_parser.cma
-   odoc_parser/odoc_parser.cmi
-   odoc_parser/odoc_parser.cmt
-   odoc_parser/odoc_parser.cmti
-   odoc_parser/odoc_parser.cmx
-   odoc_parser/odoc_parser.cmxa
+   odoc_parser/ocamlformat_odoc_parser.a
+   odoc_parser/ocamlformat_odoc_parser.cma
+   odoc_parser/ocamlformat_odoc_parser.cmi
+   odoc_parser/ocamlformat_odoc_parser.cmt
+   odoc_parser/ocamlformat_odoc_parser.cmx
+   odoc_parser/ocamlformat_odoc_parser.cmxa
+   odoc_parser/ocamlformat_odoc_parser.ml
+   odoc_parser/ocamlformat_odoc_parser__Ast.cmi
+   odoc_parser/ocamlformat_odoc_parser__Ast.cmt
+   odoc_parser/ocamlformat_odoc_parser__Ast.cmx
+   odoc_parser/ocamlformat_odoc_parser__Lexer.cmi
+   odoc_parser/ocamlformat_odoc_parser__Lexer.cmt
+   odoc_parser/ocamlformat_odoc_parser__Lexer.cmti
+   odoc_parser/ocamlformat_odoc_parser__Lexer.cmx
+   odoc_parser/ocamlformat_odoc_parser__Loc.cmi
+   odoc_parser/ocamlformat_odoc_parser__Loc.cmt
+   odoc_parser/ocamlformat_odoc_parser__Loc.cmti
+   odoc_parser/ocamlformat_odoc_parser__Loc.cmx
+   odoc_parser/ocamlformat_odoc_parser__Odoc_parser.cmi
+   odoc_parser/ocamlformat_odoc_parser__Odoc_parser.cmt
+   odoc_parser/ocamlformat_odoc_parser__Odoc_parser.cmti
+   odoc_parser/ocamlformat_odoc_parser__Odoc_parser.cmx
+   odoc_parser/ocamlformat_odoc_parser__Parse_error.cmi
+   odoc_parser/ocamlformat_odoc_parser__Parse_error.cmt
+   odoc_parser/ocamlformat_odoc_parser__Parse_error.cmx
+   odoc_parser/ocamlformat_odoc_parser__Syntax.cmi
+   odoc_parser/ocamlformat_odoc_parser__Syntax.cmt
+   odoc_parser/ocamlformat_odoc_parser__Syntax.cmti
+   odoc_parser/ocamlformat_odoc_parser__Syntax.cmx
+   odoc_parser/ocamlformat_odoc_parser__Token.cmi
+   odoc_parser/ocamlformat_odoc_parser__Token.cmt
+   odoc_parser/ocamlformat_odoc_parser__Token.cmx
+   odoc_parser/ocamlformat_odoc_parser__Warning.cmi
+   odoc_parser/ocamlformat_odoc_parser__Warning.cmt
+   odoc_parser/ocamlformat_odoc_parser__Warning.cmx
    odoc_parser/odoc_parser.ml
    odoc_parser/odoc_parser.mli
-   odoc_parser/odoc_parser__.cmi
-   odoc_parser/odoc_parser__.cmt
-   odoc_parser/odoc_parser__.cmx
-   odoc_parser/odoc_parser__.ml
-   odoc_parser/odoc_parser__Ast.cmi
-   odoc_parser/odoc_parser__Ast.cmt
-   odoc_parser/odoc_parser__Ast.cmx
-   odoc_parser/odoc_parser__Lexer.cmi
-   odoc_parser/odoc_parser__Lexer.cmt
-   odoc_parser/odoc_parser__Lexer.cmti
-   odoc_parser/odoc_parser__Lexer.cmx
-   odoc_parser/odoc_parser__Loc.cmi
-   odoc_parser/odoc_parser__Loc.cmt
-   odoc_parser/odoc_parser__Loc.cmti
-   odoc_parser/odoc_parser__Loc.cmx
-   odoc_parser/odoc_parser__Parse_error.cmi
-   odoc_parser/odoc_parser__Parse_error.cmt
-   odoc_parser/odoc_parser__Parse_error.cmx
-   odoc_parser/odoc_parser__Syntax.cmi
-   odoc_parser/odoc_parser__Syntax.cmt
-   odoc_parser/odoc_parser__Syntax.cmti
-   odoc_parser/odoc_parser__Syntax.cmx
-   odoc_parser/odoc_parser__Token.cmi
-   odoc_parser/odoc_parser__Token.cmt
-   odoc_parser/odoc_parser__Token.cmx
-   odoc_parser/odoc_parser__Warning.cmi
-   odoc_parser/odoc_parser__Warning.cmt
-   odoc_parser/odoc_parser__Warning.cmx
    odoc_parser/parse_error.ml
    odoc_parser/syntax.ml
    odoc_parser/syntax.mli
@@ -351,151 +345,147 @@
    odoc_parser/warning.ml
    opam
    parser_extended/ast_helper.ml
-   parser_extended/ast_helper.mli
    parser_extended/ast_mapper.ml
-   parser_extended/ast_mapper.mli
    parser_extended/asttypes.ml
    parser_extended/asttypes.mli
    parser_extended/docstrings.ml
-   parser_extended/docstrings.mli
    parser_extended/lexer.ml
+   parser_extended/ocamlformat_parser_extended.a
+   parser_extended/ocamlformat_parser_extended.cma
+   parser_extended/ocamlformat_parser_extended.cmi
+   parser_extended/ocamlformat_parser_extended.cmt
+   parser_extended/ocamlformat_parser_extended.cmx
+   parser_extended/ocamlformat_parser_extended.cmxa
+   parser_extended/ocamlformat_parser_extended.ml
+   parser_extended/ocamlformat_parser_extended__Ast_helper.cmi
+   parser_extended/ocamlformat_parser_extended__Ast_helper.cmt
+   parser_extended/ocamlformat_parser_extended__Ast_helper.cmx
+   parser_extended/ocamlformat_parser_extended__Ast_mapper.cmi
+   parser_extended/ocamlformat_parser_extended__Ast_mapper.cmt
+   parser_extended/ocamlformat_parser_extended__Ast_mapper.cmx
+   parser_extended/ocamlformat_parser_extended__Asttypes.cmi
+   parser_extended/ocamlformat_parser_extended__Asttypes.cmt
+   parser_extended/ocamlformat_parser_extended__Asttypes.cmti
+   parser_extended/ocamlformat_parser_extended__Asttypes.cmx
+   parser_extended/ocamlformat_parser_extended__Docstrings.cmi
+   parser_extended/ocamlformat_parser_extended__Docstrings.cmt
+   parser_extended/ocamlformat_parser_extended__Docstrings.cmx
+   parser_extended/ocamlformat_parser_extended__Lexer.cmi
+   parser_extended/ocamlformat_parser_extended__Lexer.cmt
+   parser_extended/ocamlformat_parser_extended__Lexer.cmx
+   parser_extended/ocamlformat_parser_extended__Parse.cmi
+   parser_extended/ocamlformat_parser_extended__Parse.cmt
+   parser_extended/ocamlformat_parser_extended__Parse.cmx
+   parser_extended/ocamlformat_parser_extended__Parser.cmi
+   parser_extended/ocamlformat_parser_extended__Parser.cmt
+   parser_extended/ocamlformat_parser_extended__Parser.cmti
+   parser_extended/ocamlformat_parser_extended__Parser.cmx
+   parser_extended/ocamlformat_parser_extended__Parsetree.cmi
+   parser_extended/ocamlformat_parser_extended__Parsetree.cmt
+   parser_extended/ocamlformat_parser_extended__Parsetree.cmti
+   parser_extended/ocamlformat_parser_extended__Parsetree.cmx
+   parser_extended/ocamlformat_parser_extended__Pprintast.cmi
+   parser_extended/ocamlformat_parser_extended__Pprintast.cmt
+   parser_extended/ocamlformat_parser_extended__Pprintast.cmx
+   parser_extended/ocamlformat_parser_extended__Printast.cmi
+   parser_extended/ocamlformat_parser_extended__Printast.cmt
+   parser_extended/ocamlformat_parser_extended__Printast.cmx
    parser_extended/parse.ml
-   parser_extended/parse.mli
    parser_extended/parser.ml
    parser_extended/parser.mli
-   parser_extended/parser_extended.a
-   parser_extended/parser_extended.cma
-   parser_extended/parser_extended.cmi
-   parser_extended/parser_extended.cmt
-   parser_extended/parser_extended.cmx
-   parser_extended/parser_extended.cmxa
-   parser_extended/parser_extended.ml
-   parser_extended/parser_extended__Ast_helper.cmi
-   parser_extended/parser_extended__Ast_helper.cmt
-   parser_extended/parser_extended__Ast_helper.cmti
-   parser_extended/parser_extended__Ast_helper.cmx
-   parser_extended/parser_extended__Ast_mapper.cmi
-   parser_extended/parser_extended__Ast_mapper.cmt
-   parser_extended/parser_extended__Ast_mapper.cmti
-   parser_extended/parser_extended__Ast_mapper.cmx
-   parser_extended/parser_extended__Asttypes.cmi
-   parser_extended/parser_extended__Asttypes.cmt
-   parser_extended/parser_extended__Asttypes.cmti
-   parser_extended/parser_extended__Asttypes.cmx
-   parser_extended/parser_extended__Docstrings.cmi
-   parser_extended/parser_extended__Docstrings.cmt
-   parser_extended/parser_extended__Docstrings.cmti
-   parser_extended/parser_extended__Docstrings.cmx
-   parser_extended/parser_extended__Lexer.cmi
-   parser_extended/parser_extended__Lexer.cmt
-   parser_extended/parser_extended__Lexer.cmx
-   parser_extended/parser_extended__Parse.cmi
-   parser_extended/parser_extended__Parse.cmt
-   parser_extended/parser_extended__Parse.cmti
-   parser_extended/parser_extended__Parse.cmx
-   parser_extended/parser_extended__Parser.cmi
-   parser_extended/parser_extended__Parser.cmt
-   parser_extended/parser_extended__Parser.cmti
-   parser_extended/parser_extended__Parser.cmx
-   parser_extended/parser_extended__Parsetree.cmi
-   parser_extended/parser_extended__Parsetree.cmt
-   parser_extended/parser_extended__Parsetree.cmti
-   parser_extended/parser_extended__Parsetree.cmx
-   parser_extended/parser_extended__Printast.cmi
-   parser_extended/parser_extended__Printast.cmt
-   parser_extended/parser_extended__Printast.cmti
-   parser_extended/parser_extended__Printast.cmx
    parser_extended/parsetree.ml
    parser_extended/parsetree.mli
+   parser_extended/pprintast.ml
    parser_extended/printast.ml
-   parser_extended/printast.mli
-   parser_shims/parser_shims.a
-   parser_shims/parser_shims.cma
-   parser_shims/parser_shims.cmi
-   parser_shims/parser_shims.cmt
-   parser_shims/parser_shims.cmti
-   parser_shims/parser_shims.cmx
-   parser_shims/parser_shims.cmxa
-   parser_shims/parser_shims.ml
-   parser_shims/parser_shims.mli
+   parser_shims/format_doc.ml
+   parser_shims/misc_.ml
+   parser_shims/ocamlformat_parser_shims.a
+   parser_shims/ocamlformat_parser_shims.cma
+   parser_shims/ocamlformat_parser_shims.cmi
+   parser_shims/ocamlformat_parser_shims.cmt
+   parser_shims/ocamlformat_parser_shims.cmx
+   parser_shims/ocamlformat_parser_shims.cmxa
+   parser_shims/ocamlformat_parser_shims.ml
+   parser_shims/ocamlformat_parser_shims__.cmi
+   parser_shims/ocamlformat_parser_shims__.cmt
+   parser_shims/ocamlformat_parser_shims__.cmx
+   parser_shims/ocamlformat_parser_shims__.ml
+   parser_shims/ocamlformat_parser_shims__Format_doc.cmi
+   parser_shims/ocamlformat_parser_shims__Format_doc.cmt
+   parser_shims/ocamlformat_parser_shims__Format_doc.cmx
+   parser_shims/ocamlformat_parser_shims__Misc_.cmi
+   parser_shims/ocamlformat_parser_shims__Misc_.cmt
+   parser_shims/ocamlformat_parser_shims__Misc_.cmx
    parser_standard/ast_helper.ml
-   parser_standard/ast_helper.mli
    parser_standard/ast_mapper.ml
-   parser_standard/ast_mapper.mli
    parser_standard/asttypes.ml
    parser_standard/asttypes.mli
    parser_standard/docstrings.ml
-   parser_standard/docstrings.mli
    parser_standard/lexer.ml
+   parser_standard/ocamlformat_parser_standard.a
+   parser_standard/ocamlformat_parser_standard.cma
+   parser_standard/ocamlformat_parser_standard.cmi
+   parser_standard/ocamlformat_parser_standard.cmt
+   parser_standard/ocamlformat_parser_standard.cmx
+   parser_standard/ocamlformat_parser_standard.cmxa
+   parser_standard/ocamlformat_parser_standard.ml
+   parser_standard/ocamlformat_parser_standard__Ast_helper.cmi
+   parser_standard/ocamlformat_parser_standard__Ast_helper.cmt
+   parser_standard/ocamlformat_parser_standard__Ast_helper.cmx
+   parser_standard/ocamlformat_parser_standard__Ast_mapper.cmi
+   parser_standard/ocamlformat_parser_standard__Ast_mapper.cmt
+   parser_standard/ocamlformat_parser_standard__Ast_mapper.cmx
+   parser_standard/ocamlformat_parser_standard__Asttypes.cmi
+   parser_standard/ocamlformat_parser_standard__Asttypes.cmt
+   parser_standard/ocamlformat_parser_standard__Asttypes.cmti
+   parser_standard/ocamlformat_parser_standard__Asttypes.cmx
+   parser_standard/ocamlformat_parser_standard__Docstrings.cmi
+   parser_standard/ocamlformat_parser_standard__Docstrings.cmt
+   parser_standard/ocamlformat_parser_standard__Docstrings.cmx
+   parser_standard/ocamlformat_parser_standard__Lexer.cmi
+   parser_standard/ocamlformat_parser_standard__Lexer.cmt
+   parser_standard/ocamlformat_parser_standard__Lexer.cmx
+   parser_standard/ocamlformat_parser_standard__Parse.cmi
+   parser_standard/ocamlformat_parser_standard__Parse.cmt
+   parser_standard/ocamlformat_parser_standard__Parse.cmx
+   parser_standard/ocamlformat_parser_standard__Parser.cmi
+   parser_standard/ocamlformat_parser_standard__Parser.cmt
+   parser_standard/ocamlformat_parser_standard__Parser.cmti
+   parser_standard/ocamlformat_parser_standard__Parser.cmx
+   parser_standard/ocamlformat_parser_standard__Parsetree.cmi
+   parser_standard/ocamlformat_parser_standard__Parsetree.cmt
+   parser_standard/ocamlformat_parser_standard__Parsetree.cmti
+   parser_standard/ocamlformat_parser_standard__Parsetree.cmx
+   parser_standard/ocamlformat_parser_standard__Pprintast.cmi
+   parser_standard/ocamlformat_parser_standard__Pprintast.cmt
+   parser_standard/ocamlformat_parser_standard__Pprintast.cmx
+   parser_standard/ocamlformat_parser_standard__Printast.cmi
+   parser_standard/ocamlformat_parser_standard__Printast.cmt
+   parser_standard/ocamlformat_parser_standard__Printast.cmx
    parser_standard/parse.ml
-   parser_standard/parse.mli
    parser_standard/parser.ml
    parser_standard/parser.mli
-   parser_standard/parser_standard.a
-   parser_standard/parser_standard.cma
-   parser_standard/parser_standard.cmi
-   parser_standard/parser_standard.cmt
-   parser_standard/parser_standard.cmx
-   parser_standard/parser_standard.cmxa
-   parser_standard/parser_standard.ml
-   parser_standard/parser_standard__Ast_helper.cmi
-   parser_standard/parser_standard__Ast_helper.cmt
-   parser_standard/parser_standard__Ast_helper.cmti
-   parser_standard/parser_standard__Ast_helper.cmx
-   parser_standard/parser_standard__Ast_mapper.cmi
-   parser_standard/parser_standard__Ast_mapper.cmt
-   parser_standard/parser_standard__Ast_mapper.cmti
-   parser_standard/parser_standard__Ast_mapper.cmx
-   parser_standard/parser_standard__Asttypes.cmi
-   parser_standard/parser_standard__Asttypes.cmt
-   parser_standard/parser_standard__Asttypes.cmti
-   parser_standard/parser_standard__Asttypes.cmx
-   parser_standard/parser_standard__Docstrings.cmi
-   parser_standard/parser_standard__Docstrings.cmt
-   parser_standard/parser_standard__Docstrings.cmti
-   parser_standard/parser_standard__Docstrings.cmx
-   parser_standard/parser_standard__Lexer.cmi
-   parser_standard/parser_standard__Lexer.cmt
-   parser_standard/parser_standard__Lexer.cmx
-   parser_standard/parser_standard__Parse.cmi
-   parser_standard/parser_standard__Parse.cmt
-   parser_standard/parser_standard__Parse.cmti
-   parser_standard/parser_standard__Parse.cmx
-   parser_standard/parser_standard__Parser.cmi
-   parser_standard/parser_standard__Parser.cmt
-   parser_standard/parser_standard__Parser.cmti
-   parser_standard/parser_standard__Parser.cmx
-   parser_standard/parser_standard__Parsetree.cmi
-   parser_standard/parser_standard__Parsetree.cmt
-   parser_standard/parser_standard__Parsetree.cmti
-   parser_standard/parser_standard__Parsetree.cmx
-   parser_standard/parser_standard__Printast.cmi
-   parser_standard/parser_standard__Printast.cmt
-   parser_standard/parser_standard__Printast.cmti
-   parser_standard/parser_standard__Printast.cmx
    parser_standard/parsetree.ml
    parser_standard/parsetree.mli
+   parser_standard/pprintast.ml
    parser_standard/printast.ml
-   parser_standard/printast.mli
-   result/ocamlformat_result.a
-   result/ocamlformat_result.cma
-   result/ocamlformat_result.cmi
-   result/ocamlformat_result.cmt
-   result/ocamlformat_result.cmti
-   result/ocamlformat_result.cmx
-   result/ocamlformat_result.cmxa
-   result/ocamlformat_result.ml
-   result/ocamlformat_result.mli))
+   stdlib_shims/ocamlformat_stdlib_shims.a
+   stdlib_shims/ocamlformat_stdlib_shims.cma
+   stdlib_shims/ocamlformat_stdlib_shims.cmi
+   stdlib_shims/ocamlformat_stdlib_shims.cmt
+   stdlib_shims/ocamlformat_stdlib_shims.cmx
+   stdlib_shims/ocamlformat_stdlib_shims.cmxa
+   stdlib_shims/ocamlformat_stdlib_shims.ml))
  (libexec
-  (format_/format_.cmxs
-   ocaml_common/ocaml_common.cmxs
+  (format_/ocamlformat_format.cmxs
+   ocaml_common/ocamlformat_ocaml_common.cmxs
    ocamlformat_lib.cmxs
    ocamlformat_stdlib/ocamlformat_stdlib.cmxs
-   odoc_parser/odoc_parser.cmxs
-   parser_extended/parser_extended.cmxs
-   parser_shims/parser_shims.cmxs
-   parser_standard/parser_standard.cmxs
-   result/ocamlformat_result.cmxs))
+   odoc_parser/ocamlformat_odoc_parser.cmxs
+   parser_extended/ocamlformat_parser_extended.cmxs
+   parser_shims/ocamlformat_parser_shims.cmxs
+   parser_standard/ocamlformat_parser_standard.cmxs
+   stdlib_shims/ocamlformat_stdlib_shims.cmxs))
  (doc (CHANGES.md LICENSE README.md)))
 (library
  (name ocamlformat-lib)
@@ -504,18 +494,17 @@
  (plugins (byte ocamlformat_lib.cma) (native ocamlformat_lib.cmxs))
  (native_archives ocamlformat_lib.a)
  (requires
+  dune-build-info
+  ocaml-version
   ocamlformat-lib.format_
   ocamlformat-lib.ocaml_common
-  ocamlformat-lib.parser_standard
-  ocamlformat-lib.parser_extended
-  ocamlformat-lib.result
-  ocamlformat-lib.ocamlformat_stdlib
-  ocaml-version
-  ocp-indent.lib
   ocamlformat-lib.odoc_parser
+  ocamlformat-lib.parser_extended
+  ocamlformat-lib.parser_standard
+  ocamlformat-lib.ocamlformat_stdlib
+  ocp-indent.lib
   uuseg
-  uuseg.string
-  dune-build-info)
+  uuseg.string)
  (main_module_name Ocamlformat_lib)
  (modes byte native)
  (modules
@@ -728,31 +717,30 @@
 (library
  (name ocamlformat-lib.format_)
  (kind normal)
- (archives (byte format_/format_.cma) (native format_/format_.cmxa))
- (plugins (byte format_/format_.cma) (native format_/format_.cmxs))
- (native_archives format_/format_.a)
+ (archives
+  (byte format_/ocamlformat_format.cma)
+  (native format_/ocamlformat_format.cmxa))
+ (plugins
+  (byte format_/ocamlformat_format.cma)
+  (native format_/ocamlformat_format.cmxs))
+ (native_archives format_/ocamlformat_format.a)
  (requires either ocamlformat-lib.parser_shims)
- (main_module_name Format_)
+ (main_module_name Ocamlformat_format)
  (modes byte native)
  (modules
   (wrapped
    (group
     (alias
-     (obj_name format___)
+     (obj_name ocamlformat_format)
      (visibility public)
      (kind alias)
-     (source (path Format___) (impl (path format_/format___.ml-gen))))
-    (name Format_)
+     (source
+      (path Ocamlformat_format)
+      (impl (path format_/ocamlformat_format.ml-gen))))
+    (name Ocamlformat_format)
     (modules
      (module
-      (obj_name format___Format)
-      (visibility public)
-      (source
-       (path Format)
-       (intf (path format_/format.mli))
-       (impl (path format_/format.ml))))
-     (module
-      (obj_name format_)
+      (obj_name ocamlformat_format__Format_)
       (visibility public)
       (source
        (path Format_)
@@ -763,50 +751,50 @@
  (name ocamlformat-lib.ocaml_common)
  (kind normal)
  (archives
-  (byte ocaml_common/ocaml_common.cma)
-  (native ocaml_common/ocaml_common.cmxa))
+  (byte ocaml_common/ocamlformat_ocaml_common.cma)
+  (native ocaml_common/ocamlformat_ocaml_common.cmxa))
  (plugins
-  (byte ocaml_common/ocaml_common.cma)
-  (native ocaml_common/ocaml_common.cmxs))
- (native_archives ocaml_common/ocaml_common.a)
+  (byte ocaml_common/ocamlformat_ocaml_common.cma)
+  (native ocaml_common/ocamlformat_ocaml_common.cmxs))
+ (native_archives ocaml_common/ocamlformat_ocaml_common.a)
  (requires ocamlformat-lib.parser_shims)
- (main_module_name Ocaml_common)
+ (main_module_name Ocamlformat_ocaml_common)
  (modes byte native)
  (modules
   (wrapped
    (group
     (alias
-     (obj_name ocaml_common)
+     (obj_name ocamlformat_ocaml_common)
      (visibility public)
      (kind alias)
      (source
-      (path Ocaml_common)
-      (impl (path ocaml_common/ocaml_common.ml-gen))))
-    (name Ocaml_common)
+      (path Ocamlformat_ocaml_common)
+      (impl (path ocaml_common/ocamlformat_ocaml_common.ml-gen))))
+    (name Ocamlformat_ocaml_common)
     (modules
      (module
-      (obj_name ocaml_common__Location)
+      (obj_name ocamlformat_ocaml_common__Location)
       (visibility public)
       (source
        (path Location)
        (intf (path ocaml_common/location.mli))
        (impl (path ocaml_common/location.ml))))
      (module
-      (obj_name ocaml_common__Longident)
+      (obj_name ocamlformat_ocaml_common__Longident)
       (visibility public)
       (source
        (path Longident)
        (intf (path ocaml_common/longident.mli))
        (impl (path ocaml_common/longident.ml))))
      (module
-      (obj_name ocaml_common__Syntaxerr)
+      (obj_name ocamlformat_ocaml_common__Syntaxerr)
       (visibility public)
       (source
        (path Syntaxerr)
        (intf (path ocaml_common/syntaxerr.mli))
        (impl (path ocaml_common/syntaxerr.ml))))
      (module
-      (obj_name ocaml_common__Warnings)
+      (obj_name ocamlformat_ocaml_common__Warnings)
       (visibility public)
       (source
        (path Warnings)
@@ -878,69 +866,69 @@
  (name ocamlformat-lib.odoc_parser)
  (kind normal)
  (archives
-  (byte odoc_parser/odoc_parser.cma)
-  (native odoc_parser/odoc_parser.cmxa))
+  (byte odoc_parser/ocamlformat_odoc_parser.cma)
+  (native odoc_parser/ocamlformat_odoc_parser.cmxa))
  (plugins
-  (byte odoc_parser/odoc_parser.cma)
-  (native odoc_parser/odoc_parser.cmxs))
- (native_archives odoc_parser/odoc_parser.a)
- (requires astring result camlp-streams)
- (main_module_name Odoc_parser)
+  (byte odoc_parser/ocamlformat_odoc_parser.cma)
+  (native odoc_parser/ocamlformat_odoc_parser.cmxs))
+ (native_archives odoc_parser/ocamlformat_odoc_parser.a)
+ (requires astring camlp-streams ocamlformat-lib.parser_shims)
+ (main_module_name Ocamlformat_odoc_parser)
  (modes byte native)
  (modules
   (wrapped
    (group
     (alias
-     (obj_name odoc_parser__)
+     (obj_name ocamlformat_odoc_parser)
      (visibility public)
      (kind alias)
      (source
-      (path Odoc_parser__)
-      (impl (path odoc_parser/odoc_parser__.ml-gen))))
-    (name Odoc_parser)
+      (path Ocamlformat_odoc_parser)
+      (impl (path odoc_parser/ocamlformat_odoc_parser.ml-gen))))
+    (name Ocamlformat_odoc_parser)
     (modules
      (module
-      (obj_name odoc_parser__Ast)
+      (obj_name ocamlformat_odoc_parser__Ast)
       (visibility public)
       (source (path Ast) (impl (path odoc_parser/ast.ml))))
      (module
-      (obj_name odoc_parser__Lexer)
+      (obj_name ocamlformat_odoc_parser__Lexer)
       (visibility public)
       (source
        (path Lexer)
        (intf (path odoc_parser/lexer.mli))
        (impl (path odoc_parser/lexer.ml))))
      (module
-      (obj_name odoc_parser__Loc)
+      (obj_name ocamlformat_odoc_parser__Loc)
       (visibility public)
       (source
        (path Loc)
        (intf (path odoc_parser/loc.mli))
        (impl (path odoc_parser/loc.ml))))
      (module
-      (obj_name odoc_parser)
+      (obj_name ocamlformat_odoc_parser__Odoc_parser)
       (visibility public)
       (source
        (path Odoc_parser)
        (intf (path odoc_parser/odoc_parser.mli))
        (impl (path odoc_parser/odoc_parser.ml))))
      (module
-      (obj_name odoc_parser__Parse_error)
+      (obj_name ocamlformat_odoc_parser__Parse_error)
       (visibility public)
       (source (path Parse_error) (impl (path odoc_parser/parse_error.ml))))
      (module
-      (obj_name odoc_parser__Syntax)
+      (obj_name ocamlformat_odoc_parser__Syntax)
       (visibility public)
       (source
        (path Syntax)
        (intf (path odoc_parser/syntax.mli))
        (impl (path odoc_parser/syntax.ml))))
      (module
-      (obj_name odoc_parser__Token)
+      (obj_name ocamlformat_odoc_parser__Token)
       (visibility public)
       (source (path Token) (impl (path odoc_parser/token.ml))))
      (module
-      (obj_name odoc_parser__Warning)
+      (obj_name ocamlformat_odoc_parser__Warning)
       (visibility public)
       (source (path Warning) (impl (path odoc_parser/warning.ml))))))
    (wrapped true))))
@@ -948,220 +936,216 @@
  (name ocamlformat-lib.parser_extended)
  (kind normal)
  (archives
-  (byte parser_extended/parser_extended.cma)
-  (native parser_extended/parser_extended.cmxa))
+  (byte parser_extended/ocamlformat_parser_extended.cma)
+  (native parser_extended/ocamlformat_parser_extended.cmxa))
  (plugins
-  (byte parser_extended/parser_extended.cma)
-  (native parser_extended/parser_extended.cmxs))
- (native_archives parser_extended/parser_extended.a)
+  (byte parser_extended/ocamlformat_parser_extended.cma)
+  (native parser_extended/ocamlformat_parser_extended.cmxs))
+ (native_archives parser_extended/ocamlformat_parser_extended.a)
  (requires
   compiler-libs.common
   menhirLib
   ocamlformat-lib.parser_shims
   ocamlformat-lib.ocaml_common)
- (main_module_name Parser_extended)
+ (main_module_name Ocamlformat_parser_extended)
  (modes byte native)
  (modules
   (wrapped
    (group
     (alias
-     (obj_name parser_extended)
+     (obj_name ocamlformat_parser_extended)
      (visibility public)
      (kind alias)
      (source
-      (path Parser_extended)
-      (impl (path parser_extended/parser_extended.ml-gen))))
-    (name Parser_extended)
+      (path Ocamlformat_parser_extended)
+      (impl (path parser_extended/ocamlformat_parser_extended.ml-gen))))
+    (name Ocamlformat_parser_extended)
     (modules
      (module
-      (obj_name parser_extended__Ast_helper)
+      (obj_name ocamlformat_parser_extended__Ast_helper)
       (visibility public)
-      (source
-       (path Ast_helper)
-       (intf (path parser_extended/ast_helper.mli))
-       (impl (path parser_extended/ast_helper.ml))))
+      (source (path Ast_helper) (impl (path parser_extended/ast_helper.ml))))
      (module
-      (obj_name parser_extended__Ast_mapper)
+      (obj_name ocamlformat_parser_extended__Ast_mapper)
       (visibility public)
-      (source
-       (path Ast_mapper)
-       (intf (path parser_extended/ast_mapper.mli))
-       (impl (path parser_extended/ast_mapper.ml))))
+      (source (path Ast_mapper) (impl (path parser_extended/ast_mapper.ml))))
      (module
-      (obj_name parser_extended__Asttypes)
+      (obj_name ocamlformat_parser_extended__Asttypes)
       (visibility public)
       (source
        (path Asttypes)
        (intf (path parser_extended/asttypes.mli))
        (impl (path parser_extended/asttypes.ml))))
      (module
-      (obj_name parser_extended__Docstrings)
+      (obj_name ocamlformat_parser_extended__Docstrings)
       (visibility public)
-      (source
-       (path Docstrings)
-       (intf (path parser_extended/docstrings.mli))
-       (impl (path parser_extended/docstrings.ml))))
+      (source (path Docstrings) (impl (path parser_extended/docstrings.ml))))
      (module
-      (obj_name parser_extended__Lexer)
+      (obj_name ocamlformat_parser_extended__Lexer)
       (visibility public)
       (source (path Lexer) (impl (path parser_extended/lexer.ml))))
      (module
-      (obj_name parser_extended__Parse)
+      (obj_name ocamlformat_parser_extended__Parse)
       (visibility public)
-      (source
-       (path Parse)
-       (intf (path parser_extended/parse.mli))
-       (impl (path parser_extended/parse.ml))))
+      (source (path Parse) (impl (path parser_extended/parse.ml))))
      (module
-      (obj_name parser_extended__Parser)
+      (obj_name ocamlformat_parser_extended__Parser)
       (visibility public)
       (source
        (path Parser)
        (intf (path parser_extended/parser.mli))
        (impl (path parser_extended/parser.ml))))
      (module
-      (obj_name parser_extended__Parsetree)
+      (obj_name ocamlformat_parser_extended__Parsetree)
       (visibility public)
       (source
        (path Parsetree)
        (intf (path parser_extended/parsetree.mli))
        (impl (path parser_extended/parsetree.ml))))
      (module
-      (obj_name parser_extended__Printast)
+      (obj_name ocamlformat_parser_extended__Pprintast)
       (visibility public)
-      (source
-       (path Printast)
-       (intf (path parser_extended/printast.mli))
-       (impl (path parser_extended/printast.ml))))))
+      (source (path Pprintast) (impl (path parser_extended/pprintast.ml))))
+     (module
+      (obj_name ocamlformat_parser_extended__Printast)
+      (visibility public)
+      (source (path Printast) (impl (path parser_extended/printast.ml))))))
    (wrapped true))))
 (library
  (name ocamlformat-lib.parser_shims)
  (kind normal)
  (archives
-  (byte parser_shims/parser_shims.cma)
-  (native parser_shims/parser_shims.cmxa))
+  (byte parser_shims/ocamlformat_parser_shims.cma)
+  (native parser_shims/ocamlformat_parser_shims.cmxa))
  (plugins
-  (byte parser_shims/parser_shims.cma)
-  (native parser_shims/parser_shims.cmxs))
- (native_archives parser_shims/parser_shims.a)
- (requires compiler-libs.common)
- (main_module_name Parser_shims)
- (modes byte native)
- (modules
-  (singleton
-   (obj_name parser_shims)
-   (visibility public)
-   (source
-    (path Parser_shims)
-    (intf (path parser_shims/parser_shims.mli))
-    (impl (path parser_shims/parser_shims.ml))))))
-(library
- (name ocamlformat-lib.parser_standard)
- (kind normal)
- (archives
-  (byte parser_standard/parser_standard.cma)
-  (native parser_standard/parser_standard.cmxa))
- (plugins
-  (byte parser_standard/parser_standard.cma)
-  (native parser_standard/parser_standard.cmxs))
- (native_archives parser_standard/parser_standard.a)
- (requires
-  compiler-libs.common
-  menhirLib
-  ocamlformat-lib.parser_shims
-  ocamlformat-lib.ocaml_common)
- (main_module_name Parser_standard)
+  (byte parser_shims/ocamlformat_parser_shims.cma)
+  (native parser_shims/ocamlformat_parser_shims.cmxs))
+ (native_archives parser_shims/ocamlformat_parser_shims.a)
+ (requires compiler-libs.common ocamlformat-lib.stdlib_shims)
+ (main_module_name Ocamlformat_parser_shims)
  (modes byte native)
  (modules
   (wrapped
    (group
     (alias
-     (obj_name parser_standard)
+     (obj_name ocamlformat_parser_shims__)
      (visibility public)
      (kind alias)
      (source
-      (path Parser_standard)
-      (impl (path parser_standard/parser_standard.ml-gen))))
-    (name Parser_standard)
+      (path Ocamlformat_parser_shims__)
+      (impl (path parser_shims/ocamlformat_parser_shims__.ml-gen))))
+    (name Ocamlformat_parser_shims)
     (modules
      (module
-      (obj_name parser_standard__Ast_helper)
+      (obj_name ocamlformat_parser_shims__Format_doc)
+      (visibility public)
+      (source (path Format_doc) (impl (path parser_shims/format_doc.ml))))
+     (module
+      (obj_name ocamlformat_parser_shims__Misc_)
+      (visibility public)
+      (source (path Misc_) (impl (path parser_shims/misc_.ml))))
+     (module
+      (obj_name ocamlformat_parser_shims)
       (visibility public)
       (source
-       (path Ast_helper)
-       (intf (path parser_standard/ast_helper.mli))
-       (impl (path parser_standard/ast_helper.ml))))
+       (path Ocamlformat_parser_shims)
+       (impl (path parser_shims/ocamlformat_parser_shims.ml))))))
+   (wrapped true))))
+(library
+ (name ocamlformat-lib.parser_standard)
+ (kind normal)
+ (archives
+  (byte parser_standard/ocamlformat_parser_standard.cma)
+  (native parser_standard/ocamlformat_parser_standard.cmxa))
+ (plugins
+  (byte parser_standard/ocamlformat_parser_standard.cma)
+  (native parser_standard/ocamlformat_parser_standard.cmxs))
+ (native_archives parser_standard/ocamlformat_parser_standard.a)
+ (requires
+  compiler-libs.common
+  menhirLib
+  ocamlformat-lib.parser_shims
+  ocamlformat-lib.ocaml_common)
+ (main_module_name Ocamlformat_parser_standard)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ocamlformat_parser_standard)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Ocamlformat_parser_standard)
+      (impl (path parser_standard/ocamlformat_parser_standard.ml-gen))))
+    (name Ocamlformat_parser_standard)
+    (modules
      (module
-      (obj_name parser_standard__Ast_mapper)
+      (obj_name ocamlformat_parser_standard__Ast_helper)
       (visibility public)
-      (source
-       (path Ast_mapper)
-       (intf (path parser_standard/ast_mapper.mli))
-       (impl (path parser_standard/ast_mapper.ml))))
+      (source (path Ast_helper) (impl (path parser_standard/ast_helper.ml))))
      (module
-      (obj_name parser_standard__Asttypes)
+      (obj_name ocamlformat_parser_standard__Ast_mapper)
+      (visibility public)
+      (source (path Ast_mapper) (impl (path parser_standard/ast_mapper.ml))))
+     (module
+      (obj_name ocamlformat_parser_standard__Asttypes)
       (visibility public)
       (source
        (path Asttypes)
        (intf (path parser_standard/asttypes.mli))
        (impl (path parser_standard/asttypes.ml))))
      (module
-      (obj_name parser_standard__Docstrings)
+      (obj_name ocamlformat_parser_standard__Docstrings)
       (visibility public)
-      (source
-       (path Docstrings)
-       (intf (path parser_standard/docstrings.mli))
-       (impl (path parser_standard/docstrings.ml))))
+      (source (path Docstrings) (impl (path parser_standard/docstrings.ml))))
      (module
-      (obj_name parser_standard__Lexer)
+      (obj_name ocamlformat_parser_standard__Lexer)
       (visibility public)
       (source (path Lexer) (impl (path parser_standard/lexer.ml))))
      (module
-      (obj_name parser_standard__Parse)
+      (obj_name ocamlformat_parser_standard__Parse)
       (visibility public)
-      (source
-       (path Parse)
-       (intf (path parser_standard/parse.mli))
-       (impl (path parser_standard/parse.ml))))
+      (source (path Parse) (impl (path parser_standard/parse.ml))))
      (module
-      (obj_name parser_standard__Parser)
+      (obj_name ocamlformat_parser_standard__Parser)
       (visibility public)
       (source
        (path Parser)
        (intf (path parser_standard/parser.mli))
        (impl (path parser_standard/parser.ml))))
      (module
-      (obj_name parser_standard__Parsetree)
+      (obj_name ocamlformat_parser_standard__Parsetree)
       (visibility public)
       (source
        (path Parsetree)
        (intf (path parser_standard/parsetree.mli))
        (impl (path parser_standard/parsetree.ml))))
      (module
-      (obj_name parser_standard__Printast)
+      (obj_name ocamlformat_parser_standard__Pprintast)
       (visibility public)
-      (source
-       (path Printast)
-       (intf (path parser_standard/printast.mli))
-       (impl (path parser_standard/printast.ml))))))
+      (source (path Pprintast) (impl (path parser_standard/pprintast.ml))))
+     (module
+      (obj_name ocamlformat_parser_standard__Printast)
+      (visibility public)
+      (source (path Printast) (impl (path parser_standard/printast.ml))))))
    (wrapped true))))
 (library
- (name ocamlformat-lib.result)
+ (name ocamlformat-lib.stdlib_shims)
  (kind normal)
  (archives
-  (byte result/ocamlformat_result.cma)
-  (native result/ocamlformat_result.cmxa))
+  (byte stdlib_shims/ocamlformat_stdlib_shims.cma)
+  (native stdlib_shims/ocamlformat_stdlib_shims.cmxa))
  (plugins
-  (byte result/ocamlformat_result.cma)
-  (native result/ocamlformat_result.cmxs))
- (native_archives result/ocamlformat_result.a)
- (main_module_name Ocamlformat_result)
+  (byte stdlib_shims/ocamlformat_stdlib_shims.cma)
+  (native stdlib_shims/ocamlformat_stdlib_shims.cmxs))
+ (native_archives stdlib_shims/ocamlformat_stdlib_shims.a)
+ (main_module_name Ocamlformat_stdlib_shims)
  (modes byte native)
  (modules
   (singleton
-   (obj_name ocamlformat_result)
+   (obj_name ocamlformat_stdlib_shims)
    (visibility public)
    (source
-    (path Ocamlformat_result)
-    (intf (path result/ocamlformat_result.mli))
-    (impl (path result/ocamlformat_result.ml))))))
+    (path Ocamlformat_stdlib_shims)
+    (impl (path stdlib_shims/ocamlformat_stdlib_shims.ml))))))

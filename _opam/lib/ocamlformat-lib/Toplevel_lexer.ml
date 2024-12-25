@@ -279,16 +279,16 @@ let
 
 # 54 "lib/Toplevel_lexer.mll"
  
-let repl_file lx =
+let repl_file ~ocaml_version lx =
   let x = token lx in
-  let open Parser_extended.Parsetree in
+  let open Ocamlformat_parser_extended.Parsetree in
   List.fold_left (fun acc -> function
       | `Command (cmd, pos_start) ->
           let cmd_lexbuf = Lexing.from_string cmd in
           let filename = (Location.curr lx).loc_start.pos_fname in
           Lexing.set_filename cmd_lexbuf filename ;
           Lexing.set_position cmd_lexbuf pos_start ;
-          { prepl_phrase= Parse.toplevel_phrase cmd_lexbuf
+          { prepl_phrase= Parse.toplevel_phrase ~ocaml_version cmd_lexbuf
           ; prepl_output= "" }
           :: acc
       | `Output ("", _) -> acc

@@ -50,6 +50,9 @@ type token =
   | MINUSDOT
   | MINUS
   | METHOD
+  | METAOCAML_ESCAPE
+  | METAOCAML_BRACKET_OPEN
+  | METAOCAML_BRACKET_CLOSE
   | MATCH
   | LPAREN
   | LIDENT of (string)
@@ -99,6 +102,7 @@ type token =
   | EOF
   | END
   | ELSE
+  | EFFECT
   | DOWNTO
   | DOTOP of (string)
   | DOTDOT

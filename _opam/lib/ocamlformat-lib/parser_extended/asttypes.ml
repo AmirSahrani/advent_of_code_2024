@@ -21,6 +21,11 @@
 
 *)
 
+type 'a loc = 'a Location.loc = {
+  txt : 'a;
+  loc : Location.t;
+}
+
 type constant =
     Const_int of int
   | Const_char of char
@@ -55,15 +60,17 @@ type obj_closed_flag =
 
 type label = string
 
-type 'a loc = 'a Location.loc = {
-  txt : 'a;
-  loc : Location.t;
-}
-
 type arg_label =
     Nolabel
   | Labelled of string loc (** [label:T -> ...] *)
   | Optional of string loc (** [?label:T -> ...] *)
+
+(* Moved to the top of the file
+type 'a loc = 'a Location.loc = {
+  txt : 'a;
+  loc : Location.t;
+}
+*)
 
 type variant_var = string loc loc  (** [`A] *)
 

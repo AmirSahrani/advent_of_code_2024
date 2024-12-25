@@ -1,4 +1,4 @@
-version = "20231231"
+version = "20240715"
 description = "Toolkit for postprocessing Menhir automata (.cmly files)"
 requires = ""
 archive(byte) = "menhirSdk.cma"

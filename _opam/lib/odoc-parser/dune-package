@@ -1,6 +1,6 @@
 (lang dune 3.17)
 (name odoc-parser)
-(version 2.4.3)
+(version 2.4.4)
 (sections (lib .) (libexec .) (doc ../../doc/odoc-parser))
 (files
  (lib

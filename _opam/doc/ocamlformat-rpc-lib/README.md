@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://ocaml.ci.dev/github/ocaml-ppx/ocamlformat">
-    <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fci.ocamllabs.io%2Fbadge%2Focaml-ppx%2Focamlformat%2Fmain&logo=ocaml" alt="OCaml-CI Build Status" />
+    <img src="https://img.shields.io/endpoint?url=https://ocaml.ci.dev/badge/ocaml-ppx/ocamlformat/main&logo=ocaml" alt="OCaml-CI Build Status" />
   </a>
 </p>
 
@@ -47,7 +47,7 @@ To configure ocamlformat to your liking, create an `.ocamlformat` configuration 
 
 ```
 profile = default
-version = 0.26.2
+version = 0.27.0
 ```
 
 Refer to our [documentation](https://ocaml.org/p/ocamlformat/latest/doc/index.html) or use `ocamlformat --help` for a full list of configuration options.

@@ -1,6 +1,6 @@
 (lang dune 3.17)
 (name menhirCST)
-(version 20231231)
+(version 20240715)
 (sections (lib .) (libexec .) (doc ../../doc/menhirCST))
 (files
  (lib

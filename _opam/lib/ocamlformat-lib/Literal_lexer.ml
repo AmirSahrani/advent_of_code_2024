@@ -256,27 +256,30 @@ and __ocaml_lex_string_aux_rec mode lexbuf __ocaml_lex_state =
 
   | 11 ->
 # 84 "lib/Literal_lexer.mll"
-      ( store_string (Lexing.lexeme lexbuf);
+      ( (* See store_normalized_newline in vendor/parser-standard/lexer.mll. *)
+        (match Lexing.lexeme lexbuf with
+        | "\n" -> store_string "\n"
+        | s -> store_string (String.sub s 1 (String.length s - 1)));
         string_aux mode lexbuf )
-# 262 "lib/Literal_lexer.ml"
+# 265 "lib/Literal_lexer.ml"
 
   | 12 ->
-# 87 "lib/Literal_lexer.mll"
+# 90 "lib/Literal_lexer.mll"
       ( raise Parse_error )
-# 267 "lib/Literal_lexer.ml"
+# 270 "lib/Literal_lexer.ml"
 
   | 13 ->
-# 89 "lib/Literal_lexer.mll"
+# 92 "lib/Literal_lexer.mll"
       ( store_string_char (Lexing.lexeme_char lexbuf 0);
         string_aux mode lexbuf )
-# 273 "lib/Literal_lexer.ml"
+# 276 "lib/Literal_lexer.ml"
 
   | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf;
       __ocaml_lex_string_aux_rec mode lexbuf __ocaml_lex_state
 
 ;;
 
-# 92 "lib/Literal_lexer.mll"
+# 95 "lib/Literal_lexer.mll"
  
   let string mode s =
     let lexbuf = Lexing.from_string s in
@@ -284,4 +287,4 @@ and __ocaml_lex_string_aux_rec mode lexbuf __ocaml_lex_state =
     | s -> Some s
     | exception Parse_error -> None
 
-# 288 "lib/Literal_lexer.ml"
+# 291 "lib/Literal_lexer.ml"

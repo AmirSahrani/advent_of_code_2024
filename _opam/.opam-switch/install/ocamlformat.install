@@ -103,6 +103,8 @@ doc: [
   "_build/install/default/doc/ocamlformat/README.md"
   "_build/install/default/doc/ocamlformat/odoc-pages/api.mld"
     {"odoc-pages/api.mld"}
+  "_build/install/default/doc/ocamlformat/odoc-pages/configuration.mld"
+    {"odoc-pages/configuration.mld"}
   "_build/install/default/doc/ocamlformat/odoc-pages/doc_comments.mld"
     {"odoc-pages/doc_comments.mld"}
   "_build/install/default/doc/ocamlformat/odoc-pages/editor_setup.mld"

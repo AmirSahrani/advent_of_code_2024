@@ -1,6 +1,6 @@
 (lang dune 3.17)
 (name ocamlformat)
-(version 0.26.2)
+(version 0.27.0)
 (sections
  (lib .)
  (libexec .)
@@ -67,6 +67,7 @@
    LICENSE
    README.md
    odoc-pages/api.mld
+   odoc-pages/configuration.mld
    odoc-pages/doc_comments.mld
    odoc-pages/editor_setup.mld
    odoc-pages/faq.mld

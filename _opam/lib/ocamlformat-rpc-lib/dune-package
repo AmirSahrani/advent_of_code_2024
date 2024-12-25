@@ -1,6 +1,6 @@
 (lang dune 3.17)
 (name ocamlformat-rpc-lib)
-(version 0.26.2)
+(version 0.27.0)
 (sections (lib .) (libexec .) (doc ../../doc/ocamlformat-rpc-lib))
 (files
  (lib

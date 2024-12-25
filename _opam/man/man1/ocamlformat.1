@@ -1,7 +1,7 @@
 .\" Pipe this output to groff -m man -K utf8 -T utf8 | less -R
 .\"
 .mso an.tmac
-.TH "OCAMLFORMAT" 1 "" "Ocamlformat 0.26.2" "Ocamlformat Manual"
+.TH "OCAMLFORMAT" 1 "" "Ocamlformat 0.27.0" "Ocamlformat Manual"
 .\" Disable hyphenation and ragged-right
 .nh
 .ad l
@@ -120,6 +120,9 @@ Nested match parens formatting\N'46' The flag is \fBunset\fR by default\N'46' Ca
 \fB\N'45'\N'45'let\N'45'and\fR=\fI{compact|sparse}\fR
 Style of let_and\N'46' \fBcompact\fR will try to format `let p = e and p = e` in a single line\N'46' \fBsparse\fR will always break between them\N'46' The default value is \fBcompact\fR\N'46'
 .TP 4
+\fB\N'45'\N'45'let\N'45'binding\N'45'deindent\N'45'fun\fR
+Deindent a line beginning with `fun`\N'46' The flag is \fBset\fR by default\N'46'
+.TP 4
 \fB\N'45'\N'45'let\N'45'binding\N'45'indent\fR=\fICOLS\fR
 Indentation of let binding expressions (\fICOLS\fR columns) if they do not fit on a single line\N'46' The default value is \fB2\fR\N'46' Cannot be set in attributes\N'46'
 .TP 4
@@ -164,6 +167,9 @@ Unset \fBdock\N'45'collection\N'45'brackets\fR\N'46'
 .TP 4
 \fB\N'45'\N'45'no\N'45'leading\N'45'nested\N'45'match\N'45'parens\fR
 Unset \fBleading\N'45'nested\N'45'match\N'45'parens\fR\N'46'
+.TP 4
+\fB\N'45'\N'45'no\N'45'let\N'45'binding\N'45'deindent\N'45'fun\fR
+Unset \fBlet\N'45'binding\N'45'deindent\N'45'fun\fR\N'46'
 .TP 4
 \fB\N'45'\N'45'no\N'45'ocp\N'45'indent\N'45'compat\fR
 Unset \fBocp\N'45'indent\N'45'compat\fR\N'46'
@@ -211,7 +217,7 @@ Parens tuple expressions\N'46' \fBalways\fR always uses parentheses around tuple
 Parens tuple patterns\N'46' \fBmulti\N'45'line\N'45'only\fR mode will try to skip parens for single\N'45'line tuple patterns\N'46' \fBalways\fR always uses parentheses around tuples patterns\N'46' The default value is \fBmulti\N'45'line\N'45'only\fR\N'46'
 .TP 4
 \fB\N'45'\N'45'parse\N'45'docstrings\fR
-Parse and format docstrings\N'46' The flag is \fBunset\fR by default\N'46'
+Parse and format docstrings\N'46' The flag is \fBset\fR by default\N'46'
 .TP 4
 \fB\N'45'\N'45'parse\N'45'toplevel\N'45'phrases\fR
 Parse and format toplevel phrases and their output\N'46' The flag is \fBunset\fR by default\N'46'
@@ -247,7 +253,7 @@ Style of type declaration\N'46' \fBcompact\fR will try to format constructors an
 Indentation of type declarations (\fICOLS\fR columns) if they do not fit on a single line\N'46' The default value is \fB2\fR\N'46' Cannot be set in attributes\N'46'
 .TP 4
 \fB\N'45'\N'45'wrap\N'45'comments\fR
-Wrap comments and docstrings\N'46' Comments and docstrings are divided into paragraphs by open lines (two or more consecutive newlines), and each paragraph is wrapped at the margin\N'46' Multi\N'45'line comments with vertically\N'45'aligned asterisks on the left margin are not wrapped\N'46' Consecutive comments with both left and right margin aligned are not wrapped either\N'46' The flag is \fBunset\fR by default\N'46'
+Comments are divided into paragraphs by open lines (two or more consecutive newlines), and each paragraph is wrapped at the margin\N'46' Multi\N'45'line comments with vertically\N'45'aligned asterisks on the left margin are not wrapped\N'46' Consecutive comments with both left and right margin aligned are not wrapped either\N'46' The flag is \fBunset\fR by default\N'46'
 .TP 4
 \fB\N'45'\N'45'wrap\N'45'fun\N'45'args\fR
 Style for function call\N'46' The flag is \fBset\fR by default\N'46'
@@ -261,9 +267,6 @@ This option has been removed in version 0\N'46'22\N'46'
 .TP 4
 \fB\N'45'\N'45'align\N'45'variants\N'45'decl\fR=\fIVAL\fR
 This option has been removed in version 0\N'46'22\N'46'
-.TP 4
-\fB\N'45'\N'45'disable\N'45'outside\N'45'detected\N'45'project\fR=\fIVAL\fR
-This option has been removed in version 0\N'46'22\N'46' OCamlFormat is disabled outside of a detected project by default, to enable the opposite behavior use `enable\N'45'outside\N'45'detected\N'45'project`\N'46'
 .TP 4
 \fB\N'45'\N'45'doc\N'45'comments\N'45'val\fR=\fIVAL\fR
 This option has been removed in version 0\N'46'16\N'46' If you are using `doc\N'45'comments\N'45'val=before` in combination with `doc\N'45'comments=before` then only `doc\N'45'comments=before` is now required to achive the same behavior\N'46' If you are using `doc\N'45'comments\N'45'val=before` in combination with `doc\N'45'comments=after` this behavior is not available anymore\N'46' If you are using `doc\N'45'comments\N'45'val=after` in combination with `doc\N'45'comments=before` please now use `doc\N'45'comments=before\N'45'except\N'45'val`\N'46' If you are using `doc\N'45'comments\N'45'val=after` in combination with `doc\N'45'comments=after` then only `doc\N'45'comments=after\N'45'when\N'45'possible` is now required to achieve the same behavior\N'46' If you are using `doc\N'45'comments\N'45'val=unset` the same behavior can now be achieved by setting `doc\N'45'comments` only\N'46'
@@ -300,6 +303,9 @@ Disable configuration in attributes\N'46' The flag is \fBunset\fR by default\N'4
 .TP 4
 \fB\N'45'\N'45'disable\N'45'conf\N'45'files\fR
 Disable \N'46'ocamlformat configuration files\N'46'
+.TP 4
+\fB\N'45'\N'45'disable\N'45'outside\N'45'detected\N'45'project\fR
+If no \fB\N'46'ocamlformat\fR config files have been detected, disable the formatting\N'46' OCamlFormat is disabled outside of a detected project by default, to enable the opposite behavior use \fB\N'45'\N'45'enable\N'45'outside\N'45'detected\N'45'project\fR\N'46'
 .TP 4
 \fB\N'45'\N'45'doc\fR
 Parse input as an odoc documentation\N'46'

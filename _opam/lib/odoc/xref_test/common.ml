@@ -36,7 +36,7 @@ let cmt_of_string s =
 # 38 "test/xref2/lib/common.cppo.ml"
     Typemod.type_implementation (Unit_info.make ~source_file:"" "") env p
 
-# 41 "test/xref2/lib/common.cppo.ml"
+# 43 "test/xref2/lib/common.cppo.ml"
 let parent = Odoc_model.Paths.Identifier.Mk.page (None, Odoc_model.Names.PageName.make_std "None")
 let id = Odoc_model.Paths.Identifier.Mk.root (Some parent, Odoc_model.Names.ModuleName.make_std "Root")
 
@@ -70,10 +70,10 @@ let model_of_string str =
 
 let model_of_string_impl str =
     
-# 76 "test/xref2/lib/common.cppo.ml"
+# 78 "test/xref2/lib/common.cppo.ml"
     let cmt = (cmt_of_string str).structure in
     
-# 78 "test/xref2/lib/common.cppo.ml"
+# 80 "test/xref2/lib/common.cppo.ml"
     Odoc_loader__Cmt.read_implementation (Some parent) "Root" cmt
 
 let signature_of_mli_string str =
@@ -630,11 +630,11 @@ let mkresolver () =
     ~important_digests:false
     ~directories:(List.map Odoc_odoc.Fs.Directory.of_string
   
-# 634 "test/xref2/lib/common.cppo.ml"
+# 636 "test/xref2/lib/common.cppo.ml"
   (let paths = Load_path.get_paths () in
    List.filter (fun s -> s <> "") (paths.visible @ paths.hidden))
     
-# 641 "test/xref2/lib/common.cppo.ml"
+# 643 "test/xref2/lib/common.cppo.ml"
     ) ~open_modules:[]
 
 let warnings_options =

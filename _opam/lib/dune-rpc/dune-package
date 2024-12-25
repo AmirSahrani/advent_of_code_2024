@@ -1,6 +1,6 @@
 (lang dune 3.17)
 (name dune-rpc)
-(version 3.17.0)
+(version 3.17.1)
 (sections (lib .) (libexec .) (doc ../../doc/dune-rpc))
 (files
  (lib

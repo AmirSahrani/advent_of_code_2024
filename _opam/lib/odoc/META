@@ -1,6 +1,6 @@
 package "document" (
   directory = "document"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "astring fpath odoc.model odoc.syntax_highlighter"
   archive(byte) = "odoc_document.cma"
@@ -10,7 +10,7 @@ package "document" (
 )
 package "examples" (
   directory = "examples"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = ""
   archive(byte) = "odoc_examples.cma"
@@ -20,7 +20,7 @@ package "examples" (
 )
 package "html" (
   directory = "html"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "odoc.document odoc.model tyxml"
   archive(byte) = "odoc_html.cma"
@@ -30,7 +30,7 @@ package "html" (
 )
 package "html_support_files" (
   directory = "html_support_files"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = ""
   archive(byte) = "odoc_html_support_files.cma"
@@ -40,7 +40,7 @@ package "html_support_files" (
 )
 package "json_index" (
   directory = "json_index"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "odoc.model odoc.search tyxml"
   archive(byte) = "odoc_json_index.cma"
@@ -50,7 +50,7 @@ package "json_index" (
 )
 package "latex" (
   directory = "latex"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "fmt fpath odoc.document odoc.model"
   archive(byte) = "odoc_latex.cma"
@@ -60,7 +60,7 @@ package "latex" (
 )
 package "loader" (
   directory = "loader"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "odoc-parser odoc.document odoc.model odoc.syntax_highlighter"
   archive(byte) = "odoc_loader.cma"
@@ -70,7 +70,7 @@ package "loader" (
 )
 package "manpage" (
   directory = "manpage"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "odoc.document odoc.model"
   archive(byte) = "odoc_manpage.cma"
@@ -80,7 +80,7 @@ package "manpage" (
 )
 package "model" (
   directory = "model"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "compiler-libs.common odoc-parser result"
   archive(byte) = "odoc_model.cma"
@@ -90,7 +90,7 @@ package "model" (
 )
 package "model_desc" (
   directory = "model_desc"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "odoc.model"
   archive(byte) = "odoc_model_desc.cma"
@@ -100,7 +100,7 @@ package "model_desc" (
 )
 package "ocamlary" (
   directory = "ocamlary"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = ""
   archive(byte) = ""
@@ -110,7 +110,7 @@ package "ocamlary" (
 )
 package "odoc" (
   directory = "odoc"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires =
   "compiler-libs.common
@@ -132,7 +132,7 @@ package "odoc" (
 )
 package "search" (
   directory = "search"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "odoc.html odoc.model odoc.search_html_frontend tyxml"
   archive(byte) = "odoc_search.cma"
@@ -142,7 +142,7 @@ package "search" (
 )
 package "search_html_frontend" (
   directory = "search_html_frontend"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "tyxml"
   archive(byte) = "odoc_html_frontend.cma"
@@ -152,7 +152,7 @@ package "search_html_frontend" (
 )
 package "syntax_highlighter" (
   directory = "syntax_highlighter"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "compiler-libs.common"
   archive(byte) = "syntax_highlighter.cma"
@@ -162,7 +162,7 @@ package "syntax_highlighter" (
 )
 package "xref2" (
   directory = "xref2"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires = "odoc.model"
   archive(byte) = "odoc_xref2.cma"
@@ -172,7 +172,7 @@ package "xref2" (
 )
 package "xref_test" (
   directory = "xref_test"
-  version = "2.4.3"
+  version = "2.4.4"
   description = ""
   requires =
   "compiler-libs.common
